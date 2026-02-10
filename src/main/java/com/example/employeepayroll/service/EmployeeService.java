@@ -13,10 +13,12 @@ import java.util.List;
 public class EmployeeService {
     private final EmployeeRepository repo;
 
+    //Get all employee
     public List<Employee> getAll() {
         return repo.findAll();
     }
 
+    //Get employee by id
     public Employee getById(Long id) {
         return repo.findById(id)
                 .orElseThrow(() ->
@@ -36,6 +38,7 @@ public class EmployeeService {
         return repo.save(existing);
     }
 
+    //Delete Employee
     public void delete(Long id) {
         repo.delete(getById(id));
     }
