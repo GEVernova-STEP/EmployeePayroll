@@ -36,4 +36,7 @@ public class EmployeeService {
         return repo.save(existing);
     }
 
+    public void delete(Long id) {
+        repo.delete(getById(id));
+    }
 }
