@@ -22,4 +22,9 @@ public class EmployeeService {
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Employee not found: " + id));
     }
+
+    //Create employee
+    public Employee create(Employee employee) {
+        return repo.save(employee);
+    }
 }
