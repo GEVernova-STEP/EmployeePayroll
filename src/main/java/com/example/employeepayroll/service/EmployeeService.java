@@ -27,4 +27,13 @@ public class EmployeeService {
     public Employee create(Employee employee) {
         return repo.save(employee);
     }
+
+    //Update employee
+    public Employee update(Long id, Employee employee) {
+        Employee existing = getById(id);
+        existing.setName(employee.getName());
+        existing.setSalary(employee.getSalary());
+        return repo.save(existing);
+    }
+
 }
